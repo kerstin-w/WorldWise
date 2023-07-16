@@ -24,7 +24,7 @@ array. */
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
-        <CountryItem key={country} country={country} />
+        <CountryItem key={country.country} country={country} />
       ))}
     </ul>
   );
