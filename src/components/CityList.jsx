@@ -2,10 +2,12 @@ import CityItem from "./CityItem";
 import styles from "./CityList.module.css";
 import Spinner from "./Spinner";
 import Message from "./Message";
+import { useCities } from "../contexts/CitiesContext";
 
-/* The code is defining a functional component called `CityList` that takes in two props: `cities` and
-`isLoading`. */
-function CityList({ cities, isLoading }) {
+/* The code is defining a functional component called `CityList`. Inside the component, it is using the
+`useCities` hook to get the `cities` and `isLoading` values from the `CitiesContext`. */
+function CityList() {
+  const { cities, isLoading } = useCities();
   if (isLoading) return <Spinner />;
 
   if (!cities.length)

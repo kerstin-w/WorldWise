@@ -2,10 +2,12 @@ import CountryItem from "./CountryItem";
 import styles from "./CountryList.module.css";
 import Spinner from "./Spinner";
 import Message from "./Message";
+import { useCities } from "../contexts/CitiesContext";
 
-/* The code is defining a functional component called `CountryList` that takes in two props: `cities`
-and `isLoading`. */
-function CountryList({ cities, isLoading }) {
+/* The code is defining a functional component called `CountryList`. Inside the component, it is using
+the `useCities` hook to get the `cities` array and `isLoading` boolean from the `CitiesContext`. */
+function CountryList() {
+  const { cities, isLoading } = useCities();
   /* The code is using the `reduce` method to create an array of unique countries from the `cities`
 array. */
   const countries = cities.reduce((arr, city) => {
