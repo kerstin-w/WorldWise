@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -9,23 +9,29 @@ import {
   useMapEvents,
 } from "react-leaflet";
 
+import { useGeolocation } from "../hooks/useGeolocation";
+import { useUrlPosition } from "../hooks/useUrlPosition";
 import styles from "./Map.module.css";
 import { useCities } from "../contexts/CitiesContext";
-import { useGeolocation } from "../hooks/useGeolocation";
 import Button from "./Button";
 
+/**
+ * The `Map` function is a React component that displays a map with markers for cities and allows the
+ * user to change the map center and detect clicks on the map.
+ * @returns The `Map` function returns JSX elements that represent a map container. It includes a
+ * button to get the user's current position, a map container with a tile layer, markers for each city,
+ * and additional components for changing the map center and detecting clicks on the map.
+ */
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  const [searchParams] = useSearchParams();
   const {
     isLoading: isLoadingPosition,
     position: geolocationPosition,
     getPosition,
   } = useGeolocation();
 
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
+  const [mapLat, mapLng] = useUrlPosition();
 
   /* The `useEffect` hook in the provided code is used to update the `mapPosition` state variable
 whenever the `mapLat` or `mapLng` values change. */
