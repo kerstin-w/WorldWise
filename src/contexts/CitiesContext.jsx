@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://my-json-server.typicode.com/kerstin-w/WorldWise";
 
 /* `const CitiesContext = createContext();` is creating a new context object called `CitiesContext`
 using the `createContext` function provided by React. This context object will be used to share data
