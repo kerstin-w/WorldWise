@@ -71,7 +71,26 @@ function CitiesProvider({ children }) {
 
       setCities((cities) => [...cities, data]);
     } catch {
-      alert("There was an error loading data..");
+      alert("There was an error creating city..");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  /**
+   * The function `deleteCity` is an asynchronous function that deletes a city by making a DELETE request
+   * to a specified URL and updates the list of cities by removing the deleted city from the state.
+   */
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      await fetch(`${BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch {
+      alert("There was an error deleting city..");
     } finally {
       setIsLoading(false);
     }
@@ -85,6 +104,7 @@ function CitiesProvider({ children }) {
         currentCity,
         getCity,
         createCity,
+        deleteCity,
       }}
     >
       {children}

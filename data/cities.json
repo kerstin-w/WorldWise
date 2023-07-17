@@ -37,18 +37,6 @@
       "id": 98443197
     },
     {
-      "cityName": "Sastago",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-17T08:49:29.914Z",
-      "notes": "sdf",
-      "position": {
-        "lat": "41.393294288784894",
-        "lng": "-0.28564453125000006"
-      },
-      "id": 98443198
-    },
-    {
       "cityName": "Penas de Riglos, Las",
       "country": "Spain",
       "emoji": "🇪🇸",
@@ -59,18 +47,6 @@
         "lng": "-0.9008789062500001"
       },
       "id": 98443199
-    },
-    {
-      "cityName": "Rabat",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2023-07-17T08:56:35.987Z",
-      "notes": "dsf",
-      "position": {
-        "lat": "34.028762179464465",
-        "lng": "-6.845169067382813"
-      },
-      "id": 98443200
     },
     {
       "cityName": "Cape Town",
