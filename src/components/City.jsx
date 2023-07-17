@@ -6,6 +6,10 @@ import styles from "./City.module.css";
 import Spinner from "./Spinner";
 import BackButton from "./BackButton";
 
+/**
+ * The `formatDate` function formats a given date into a string with the day, month, year, and weekday
+ * in a specific format.
+ */
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
@@ -14,6 +18,7 @@ const formatDate = (date) =>
     weekday: "long",
   }).format(new Date(date));
 
+/* The `City` function is a React component that displays information about a specific city. */
 function City() {
   const { id } = useParams();
   const { getCity, currentCity, isLoading } = useCities();
