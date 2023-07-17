@@ -37,18 +37,6 @@
       "id": 98443197
     },
     {
-      "cityName": "Penas de Riglos, Las",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-17T08:52:44.723Z",
-      "notes": "sdf",
-      "position": {
-        "lat": "42.45588764197166",
-        "lng": "-0.9008789062500001"
-      },
-      "id": 98443199
-    },
-    {
       "cityName": "Cape Town",
       "country": "South Africa",
       "emoji": "🇿🇦",
@@ -59,6 +47,18 @@
         "lng": "18.369140625000004"
       },
       "id": 98443201
+    },
+    {
+      "cityName": "Hunabyggð",
+      "country": "Iceland",
+      "emoji": "🇮🇸",
+      "date": "2023-07-17T09:38:46.064Z",
+      "notes": "dsf",
+      "position": {
+        "lat": "65.07213008560697",
+        "lng": "-20.039062500000004"
+      },
+      "id": 98443202
     }
   ]
 }
