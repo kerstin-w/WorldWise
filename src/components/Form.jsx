@@ -28,6 +28,13 @@ export function convertToEmoji(countryCode) {
 
 const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
+/**
+ * The `Form` function is a React component that renders a form for adding a new city, including fields
+ * for city name, date, notes, and buttons for submitting the form and navigating back.
+ * @returns The `Form` component is returning a form element with various input fields and buttons. The
+ * form allows users to enter information about a city, such as the city name, date of visit, and
+ * notes. The form also includes a button to add the city and a back button.
+ */
 function Form() {
   const [lat, lng] = useUrlPosition();
   const { createCity, isLoading } = useCities();
@@ -74,6 +81,11 @@ coordinates. */
     [lat, lng, setEmoji]
   );
 
+  /**
+   * The handleSubmit function is an asynchronous function that handles form submission by creating a new
+   * city object and navigating to the cities page.
+   * @returns The function is not returning anything explicitly.
+   */
   async function handleSubmit(e) {
     e.preventDefault();
 

@@ -52,6 +52,11 @@ function CitiesProvider({ children }) {
     }
   }
 
+  /**
+   * The function `createCity` is an asynchronous function that sends a POST request to a specified URL
+   * with a new city object, updates the list of cities with the response data, and handles loading
+   * states.
+   */
   async function createCity(newCity) {
     try {
       setIsLoading(true);
