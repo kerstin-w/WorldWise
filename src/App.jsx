@@ -5,7 +5,7 @@ import Pricing from "./pages/Pricing";
 import Homepage from "./pages/Homepage";
 import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
-import PageNotFound from "./pages/PageNotfound";
+import PageNotFound from "./pages/PageNotFound";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
