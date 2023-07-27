@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 
 const BASE_URL = "https://my-json-server.typicode.com/kerstin-w/WorldWise";
 
@@ -101,26 +107,26 @@ function CitiesProvider({ children }) {
     fetchCities();
   }, []);
 
-  /**
-   * The function `getCity` is an asynchronous function that fetches city data from an API based on the
-   * provided `id` parameter and updates the state accordingly.
-   * @returns The function does not have a return statement, so it does not explicitly return anything.
-   */
-  async function getCity(id) {
-    if (Number(id) === currentCity.id) return;
+  /* The `getCity` function is a callback function created using the `useCallback` hook. It is used to
+fetch city data from an API based on the provided `id` parameter and update the state accordingly. */
+  const getCity = useCallback(
+    async function getCity(id) {
+      if (Number(id) === currentCity.id) return;
 
-    dispatch({ type: "loading" });
-    try {
-      const res = await fetch(`${BASE_URL}/cities/${id}`);
-      const data = await res.json();
-      dispatch({ type: "city/loaded", payload: data });
-    } catch {
-      dispatch({
-        type: "rejected",
-        payload: "There was an error loading the city..",
-      });
-    }
-  }
+      dispatch({ type: "loading" });
+      try {
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const data = await res.json();
+        dispatch({ type: "city/loaded", payload: data });
+      } catch {
+        dispatch({
+          type: "rejected",
+          payload: "There was an error loading the city..",
+        });
+      }
+    },
+    [currentCity.id]
+  );
 
   /**
    * The function `createCity` is an asynchronous function that sends a POST request to create a new city
